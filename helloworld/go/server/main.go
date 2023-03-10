@@ -36,10 +36,10 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
+	log.Printf("server listening at %v", lis.Addr())
+
 	s := Server()
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
-
-	log.Printf("server listening at %v", lis.Addr())
 }
